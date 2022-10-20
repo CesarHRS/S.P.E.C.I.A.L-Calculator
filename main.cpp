@@ -67,12 +67,12 @@ void collect_data(){
     unsigned short int char_points = 5, tags = 3;
     string input;
 
-    getchar();
+    cin.ignore();
     cout << "Type your name!" << "\t" << endl;
     getline(cin, sheet.name);
     cout << "Type your age!" << "\t" << endl;
     cin >> sheet.age;
-    getchar();
+    cin.ignore();
     cout << "Type your sex!" << "\t" << endl;
     getline(cin, sheet.sex);
 
@@ -149,7 +149,7 @@ void collect_data(){
         cout << "Tags remaining: " << tags << endl;
         cout << "Type the skill name to tag it! (lowercase only)"<< endl;
         cout << "To remove it, type -skillname." << endl;
-        cin >> input;
+        getline(cin, input);
 
         if(input == "small-guns" && tags > 0){
             if(!sheet.small_guns.is_tagged){
